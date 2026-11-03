@@ -6,9 +6,35 @@ last_verified: 2026-11-03
 confidence: 🟡
 sources:
   - https://cloud.google.com/model-garden/pricing
+  - https://support.google.com/googleone/answer/14534406?hl=ja
 ---
 
 # Google の料金
+
+> **このページで分かること**: Google AI プラン、YouTube Premium、Gemini・Imagen・Veo の API 料金の違いと読み方、サブスクと API のどちらが安いかの計算例。
+>
+> **対象**: 初心者〜中級者  **先に読むページ**: [料金プラン(索引と読み方)](README.md)
+>
+> **確認時点**: 2026年(皇紀2686年・令和8年)11月3日。表の中の年は西暦のみで表記します。
+
+## 概要
+
+Google の料金は「誰が・何のために払うか」で3つに分かれます。**視聴者・利用者として払うもの**(YouTube Premium、Google AI プラン)、**開発者として使った分だけ払うもの**(API)、そして**投稿者が受け取るもの**(YouTube の収益化)です。投稿者が YouTube に動画を載せること自体には料金はかかりません。
+
+- 日本円のサブスク価格は 🟡(報道・比較記事)、API 料金は ✅(Google Cloud の公式料金ページ。米ドル)です。
+- 日本の価格表示は「税込」と書かれているもの以外は、**購入画面で税込/税抜を確認**してください(⚪)。
+
+## 用語
+
+| 用語 | 意味 |
+|---|---|
+| Google AI プラン | Gemini などの上限を増やす個人向けサブスク(Plus / Pro / Ultra) |
+| YouTube Premium / Premium Lite | 視聴者向けの広告なし再生などのサブスク。Lite は機能を絞った安いプラン |
+| YPP / YouTube Partner Program(YouTube パートナー プログラム) | 投稿者が収益を受け取るためのプログラム |
+| API(エーピーアイ) | プログラムから機能を使う仕組み。使った分だけ課金 |
+| token(トークン) | AI が文章を処理する単位。料金は100万トークンあたりで表示 |
+| long context(長文コンテキスト) | 一度に大量の文章を入力すること。一定量を超えると単価が上がる |
+| promotion price(プロモーション価格) | 期間限定の割引価格。期限後に通常価格に戻る |
 
 SNS 運用で関わる Google の料金は、**①利用者向けサブスク(Google AI、YouTube Premium)**、**②開発者向け API(Gemini、Imagen、Veo)**、**③投稿者の収益化(YouTube、AdSense)**の3つに分かれます。
 
@@ -27,6 +53,7 @@ SNS 運用で関わる Google の料金は、**①利用者向けサブスク(Go
 - Veo(動画生成):Pro は Veo 3.1 Fast、Ultra は音声付きの Veo 3.1 完全版とする記事(英語の解説。日本での提供状況は未確認)。
 - Gemini Spark など一部機能は「US only, English only」と表記され、日本では使えない可能性。
 - **Ultra への YouTube Premium 付帯**は日本では明確に確認できず。
+- Google のヘルプには「一部の Google AI Pro メンバーシップには **YouTube Premium Lite 個人プラン**が自動的に含まれる」「YouTube Music Premium は含まれず、完全版の YouTube Premium は別途購入」とあります(✅ [Google One ヘルプ](https://support.google.com/googleone/answer/14534406?hl=ja)。料金の記載はなし)。
 
 ### YouTube Premium(日本。🟡 Gizmodo Japan 2026年4月、Selectra)
 
@@ -104,3 +131,53 @@ SNS 運用で関わる Google の料金は、**①利用者向けサブスク(Go
 
 - Google の生成物を投稿する場合の表示ルールは [ai-rules-by-platform](../01-common/ai-rules-by-platform.md)(YouTube は ✅)。
 - 生成画像の著作権・商用利用は各サービスの規約で確認([ai-usage-policy](../01-common/ai-usage-policy.md))。
+
+## 5. 計算例: サブスクと API のどちらが安いか(⚪ 為替は仮定)
+
+| 前提 | 計算 | 結果 |
+|---|---|---|
+| Imagen 4 Fast で画像を月100枚(✅ $0.02/枚) | 100 × $0.02 | $2.00 |
+| 円の目安(**仮に 1ドル = 150円**) | $2.00 × 150 | 約 300円 |
+| Google AI Pro(🟡 2,900円/月)と同じ額で作れる枚数 | 2,900円 ÷ 150円 ÷ $0.02 | 約 966枚 |
+
+- **画像だけ**が目的で枚数が少ないなら API のほうが安くなりやすいです。ただし API はプログラムの準備(API キーの管理など)が必要です([API の基本](../20-api/01-concepts-and-security.md))。
+- サブスクには文章の補助、ストレージ、YouTube Premium Lite(一部のプラン)なども含まれるため、**画像の単価だけで比較しない**でください。
+- 「1ドル = 150円」は計算方法を示すための仮の値です。
+
+## よくある失敗と対処
+
+| 失敗 | 対処 |
+|---|---|
+| プロモーション価格のまま見積もる | 期限(例: Gemini 4 Argon は 2026年11月30日まで)を確認し、通常価格でも見積もる |
+| iPhone のアプリ内で YouTube Premium を契約して割高 | Web・Android の価格と比べる(🟡 1,280円 vs 1,680円) |
+| YouTube Premium に入れば収益化できると思う | 視聴用の契約と、投稿者の収益化(YPP)は別 |
+| API キーを公開の場所に貼る | キーは非公開の場所に保管。公開リポジトリには `YOUR_API_KEY` のような例示のみ |
+| 試しに何度も生成して費用が膨らむ | 課金は 200 を返した(成功した)リクエストのみ(✅ Google Cloud の料金ページ)。成功した分は課金されるので、試作は少ない枚数・低解像度で行う |
+
+## チェックリスト
+
+- [ ] 必要なのは「視聴」「AI の補助」「API」のどれかを決めた
+- [ ] 購入画面で現在の価格、税込/税抜、更新日を確認した
+- [ ] API はプロモーション期限と通常価格を確認した
+- [ ] API キーを安全に保管した
+- [ ] 経費として記録する準備をした([税務](../30-strategy/04-tax-and-business.md))
+
+## 関連ページ / 次に読む
+
+- [YouTube の収益化](../05-youtube/05-monetization.md)
+- [AI・制作ツールの料金](05-ai-and-creative-tools.md)
+- [月額の見積り例](06-cost-planning.md)
+
+## 出典
+
+| URL | 確認日 | 備考 |
+|---|---|---|
+| https://cloud.google.com/model-garden/pricing | 2026-11-03 | Gemini・画像・Veo の API 料金 ✅ |
+| https://support.google.com/googleone/answer/14534406?hl=ja | 2026-11-03 | Google AI Pro の特典(YouTube Premium Lite 個人プランが一部プランに含まれる)✅。料金の記載なし |
+| (Google AI プラン・YouTube Premium の日本の公式料金ページ) | — | one.google.com・youtube.com の料金ページは未取得(🟡 のまま) |
+
+## 変更履歴
+
+| 日付 | 内容 |
+|---|---|
+| 2026-11-03 | 初心者向けに加筆(概要、用語、Google One ヘルプで YouTube Premium Lite の付帯を ✅ 確認、サブスクと API の計算例、よくある失敗、チェックリスト、出典表)。既存の ✅ と数値は変更なし |
