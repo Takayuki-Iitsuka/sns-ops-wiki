@@ -32,5 +32,7 @@ confidence: ⚪
 9. [09-tips](09-tips.md) コツ
 10. [10-policies](10-policies.md) ルール
 
-> 用語: 旧名称の「ツイート」は現在「ポスト」、「リツイート」は「リポスト」。
 11. [11-checklist](11-checklist.md) 運用チェックリスト
+12. [12-subscriptions](12-subscriptions.md) **Subscriptions(月額購読)の資格・手数料・機能**
+
+> 用語: 旧名称の「ツイート」は現在「ポスト」、「リツイート」は「リポスト」。

@@ -43,6 +43,10 @@ confidence: ⚪
 
 配信情報の取得、チャットのモデレーション、EventSub による通知。フォロー・サブスクの通知を受けて Discord や X に連動するなどの用途(⚪)。
 
+## Discord(Webhook / Bot)
+
+通知は **Webhook** が最も簡単(トークン管理が不要。URL が秘密)。ボットは Bot Token と Gateway/REST。上限・レート制限・特権インテントの要点は [04-discord](../09-other-services/04-discord.md) §8(⚪ 公式未取得 #65)。
+
 ## note
 
 - 公式の**公開 API は確認できていません**(⚪ 要確認 #43)。

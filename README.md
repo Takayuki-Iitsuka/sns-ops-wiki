@@ -12,20 +12,20 @@ SNS の**使い方・設定・投稿ノウハウ・画像と動画の仕様・�
 |---|---|---|
 | メタ情報 | [docs/00-meta/](docs/00-meta/) | 読み方、用語集、出典方針、ページ雛形、**要検証リスト**、ロードマップ、品質レビュー記録 |
 | 共通知識 | [docs/01-common/](docs/01-common/) | **画像・動画の仕様比較と書き出しプリセット**、制作工程、ハッシュタグ、代替テキスト、コメント運用、文章術、企画、検索、AI 方針、著作権、法令、炎上対応、FAQ |
-| X | [docs/02-x/](docs/02-x/) | 旧 Twitter |
+| X | [docs/02-x/](docs/02-x/) | 旧 Twitter。**Subscriptions(月額購読)**を含む |
 | Instagram | [docs/03-instagram/](docs/03-instagram/) | フィード・リール・ストーリーズ |
 | note | [docs/04-note/](docs/04-note/) | 記事・マガジン・メンバーシップ |
 | YouTube | [docs/05-youtube/](docs/05-youtube/) | 長尺・Shorts・ライブ・収益化 |
 | TikTok | [docs/06-tiktok/](docs/06-tiktok/) | 縦型動画・Creator Rewards |
 | Threads | [docs/07-threads/](docs/07-threads/) | Meta のテキスト SNS |
 | Facebook | [docs/08-facebook/](docs/08-facebook/) | ページ・グループ・リール |
-| その他 | [docs/09-other-services/](docs/09-other-services/) | Bluesky、LINE 公式アカウント、Twitch |
+| その他 | [docs/09-other-services/](docs/09-other-services/) | Bluesky、LINE 公式アカウント、Twitch、**Discord** |
 | 収益化サービス | [docs/10-creator-economy/](docs/10-creator-economy/) | FANBOX、Fantia、Patreon、Ko-fi、BOOTH、SUZURI、KDP、アフィリエイト、メンバーシップ設計 |
 | **API** | [docs/20-api/](docs/20-api/) | **X API v1.1 → v2 移行**、Instagram/Threads/YouTube/TikTok/LINE/Bluesky、**API のメリット**、**ツール連携**、自動化の方針、パイプライン設計 |
 | **料金プラン** | [docs/40-pricing/](docs/40-pricing/) | **X と Grok の関係・料金、Google(AI・YouTube Premium・Gemini API)、Meta One、note、AI・制作・予約ツール、費用の見積り** |
 | 全体戦略 | [docs/30-strategy/](docs/30-strategy/) | 目標・KPI、導線、収益化計画、税務、リスク、調査 |
 | 運用アカウント | [docs/31-accounts/](docs/31-accounts/) | 運用アカウントの台帳(公開情報のみ) |
-| 追加候補 | [docs/99-planned/](docs/99-planned/) | Pinterest、Discord ほか |
+| 追加候補 | [docs/99-planned/](docs/99-planned/) | Pinterest ほか(Discord・X Subscriptions は作成済み) |
 | 雛形 | [templates/](templates/) | 投稿計画、週次レビュー、画像チェックリスト |
 | 検査 | [scripts/check_wiki.py](scripts/check_wiki.py) | リンク・front matter・年換算・鮮度・秘密情報の検査 |
 

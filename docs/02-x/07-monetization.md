@@ -29,7 +29,7 @@ sources:
 
 | 手段 | 内容 | 確度 |
 |---|---|---|
-| Subscriptions | 月額購読者向けコンテンツ | ⚪ 日本での提供条件は要確認 |
+| Subscriptions | 月額購読者向けコンテンツ。資格・手数料・機能は [12-subscriptions](12-subscriptions.md) | 🟡 日本での提供条件は要確認(#59〜#61) |
 | 外部誘導 | note、自社サイト、物販へ | — |
 | 案件（PR） | ステマ規制に注意 [legal](../01-common/legal-compliance.md) | — |
 

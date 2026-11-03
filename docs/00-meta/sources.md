@@ -16,6 +16,7 @@ confidence: 🟡
 | https://docs.x.com/x-api/fundamentals/rate-limits.md | レート制限 |
 | https://docs.x.com/x-api/media/introduction.md ・ best-practices.md ・ media-upload-chunked.md | メディアの上限・仕様・アップロード手順 |
 | https://docs.x.com/changelog.md | 2026年の変更履歴 |
+| https://docs.x.com/x-api/fundamentals/data-dictionary.md | User の `subscription`・`subscription_type`・`verified_type`(X Subscriptions の API 面) |
 | https://developers.facebook.com/documentation/instagram-platform/content-publishing.md | Instagram の公開 API |
 | https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media.md | 画像・リール・キャプションの仕様 |
 | https://developers.facebook.com/documentation/threads/overview.md | Threads の上限・仕様 |
@@ -86,3 +87,14 @@ confidence: 🟡
 | 国税庁 | https://www.nta.go.jp/ |
 | e-Gov 法令検索 | https://laws.e-gov.go.jp/ |
 | 文化庁(著作権) | https://www.bunka.go.jp/seisaku/chosakuken/ |
+
+## X Subscriptions / Discord(検索要約。本文は未取得)
+
+| URL | 内容 | 備考 |
+|---|---|---|
+| https://help.x.com/ja/using-x/subscriptions-creator | X Subscriptions の概要・取り分(97% / 80%) | 検索要約。403 で本文未取得 |
+| https://help.x.com/ja/rules-and-policies/subscriptions-policy | 資格要件 | 検索要約 |
+| https://legal.x.com/subscriptions-creator-terms.html | クリエイター利用規約 | 検索結果のタイトルのみ |
+| https://support.discord.com/hc/articles/10575066024983 | Server Monetization Policy | 検索結果のタイトルのみ |
+| https://creator-support.discord.com/hc/en-us/articles/10424143128343 | Discord の収益化 | 検索結果のタイトルのみ |
+| https://blog.communityone.io/discord-monetization-guide-2026/ ほか | Discord 収益化の第三者解説(10% など) | 不一致あり |

@@ -57,7 +57,7 @@ confidence: 🟡
 | 中 | ポッドキャスト・音声 | Spotify、YouTube のポッドキャスト | |
 | 中 | 多言語・海外 | 英語の併記、海外ファン向け | |
 | 中 | ソーシャルリスニング | 言及・ブランドのモニタリング | |
-| 中 | コミュニティ運営 | Discord、LINE オープンチャット、Facebook グループ | |
+| 中 | コミュニティ運営 | ~~Discord~~(作成済み [04-discord](../09-other-services/04-discord.md))、LINE オープンチャット、Facebook グループ | |
 | 低 | Pinterest・Lemon8・ニコニコ | [99-planned](../99-planned/README.md) | |
 | 低 | 契約書・請求書のひな形 | 専門家の確認が必要 | |
 | 低 | 保険・法人化の判断 | 専門家 | |

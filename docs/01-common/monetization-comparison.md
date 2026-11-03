@@ -16,7 +16,7 @@ confidence: 🟡
 |---|---|---|---|---|---|---|
 | 広告・インプレッション分配 | 🟡 旧 Creator Revenue Sharing は終了、後継の報道 [詳細](../02-x/07-monetization.md) | 🟡 リールの分配は国・時期で異なる | 🟡 YPP(1,000人+4,000時間など) [詳細](../05-youtube/05-monetization.md) | 🟡 Creator Rewards(1分超動画) [詳細](../06-tiktok/05-monetization.md) | 🟡 Content Monetization [詳細](../08-facebook/04-monetization.md) | 未確認 |
 | 投げ銭 | — | 🟡 Gifts(条件に不一致) | 🟡 Super Chat/Thanks(日本対応) | 🟡 ライブギフト | 🟡 Stars | 未確認 |
-| 月額課金 | 🟡 Subscriptions(要確認) | 🟡 Subscriptions | 🟡 メンバーシップ(500人〜) | 🟡 サブスク | 🟡 ファン購読 | 未確認 |
+| 月額課金 | 🟡 Subscriptions [詳細](../02-x/12-subscriptions.md) | 🟡 Subscriptions | 🟡 メンバーシップ(500人〜) | 🟡 サブスク | 🟡 ファン購読 | 未確認 |
 | ショッピング連携 | — | ⚪ | ⚪ | 🟡 TikTok Shop | ⚪ | — |
 
 ## 自分で売る・継続支援を受ける
@@ -30,6 +30,7 @@ confidence: 🟡
 | アフィリエイト | Amazon、ASP ほか | [04-affiliate](../10-creator-economy/04-affiliate.md) |
 | 友だちへの連絡・販売 | LINE 公式アカウント | [02-line-official-account](../09-other-services/02-line-official-account.md) |
 | ライブ配信 | Twitch、YouTube ライブ | [03-twitch](../09-other-services/03-twitch.md) |
+| コミュニティの有料メンバー | Discord(Server Subscriptions) | [04-discord](../09-other-services/04-discord.md) |
 | 外部誘導(物販・案件) | 各 SNS | 規約確認、広告表記 |
 
 ## 共通の注意
