@@ -4,17 +4,40 @@ platform: common
 topic: media
 last_verified: 2026-11-03
 confidence: ⚪
+sources:
+  - https://support.google.com/youtube/answer/1722171
+  - https://support.google.com/youtube/answer/72431
+  - https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media.md
 ---
 
 # スマートフォンで最も見やすい画像・動画の考察
+
+> **このページで分かること**: スマホの画面の大きさから逆算した、画像・動画の推奨サイズ・比率・文字の大きさ。結論だけ知りたい場合は §8 へ。
+>
+> **対象**: 初心者〜中級者  **先に読むページ**: [image-specs-comparison](image-specs-comparison.md)、[video-specs-comparison](video-specs-comparison.md)
+
+## 概要
 
 SNS の閲覧は大半がスマートフォンです。**iPhone と Android の画面特性から、どのサイズ・比率・文字サイズが「世間的に最も見やすい」か**を、計算に基づいて考察します。
 
 > 画面の解像度・論理幅は端末の公開仕様に基づく一般知識(⚪)、利用割合と一般的な論理幅は検索で得た二次資料(🟡)です。**最終判断は自分の実機での確認**(末尾のテスト手順)。
 
+## 用語
+
+| 用語 | 意味 |
+|---|---|
+| px / pixel(ピクセル、画素) | 画像や画面を構成する点。画像の「1080×1350」は横 1080 点・縦 1350 点 |
+| pt / dp(論理ピクセル) | 端末の画面を「標準的な見た目の大きさ」で数える単位。iPhone は pt、Android は dp。物理的な画素数とは異なる |
+| 倍率(@2x、@3x) | 1pt を何 px で表示するか。@3x なら 1pt = 3px |
+| aspect ratio(アスペクト比、縦横比) | 横:縦 の比。4:5 は縦長、16:9 は横長 |
+| safe area(安全領域) | アプリの UI(ボタン・文字)が重ならない中央の領域 |
+| sRGB / Display P3 | 色の範囲(色空間)の規格。sRGB が Web の標準、P3 はより広い |
+| SDR / HDR | 標準の明るさの映像 / 明暗の幅が広い映像 |
+| OLED(有機 EL) | 画素自体が光る画面。黒が深いが暗部の表現に癖がある |
+
 ## 1. 前提: 端末の画面
 
-### 日本の利用割合(🟡 StatCounter、モバイル OS)
+### 日本の利用割合(2026年(皇紀2686年・令和8年)、🟡 StatCounter、モバイル OS)
 
 | 月 | iOS | Android |
 |---|---|---|
@@ -165,3 +188,37 @@ SNS の閲覧は大半がスマートフォンです。**iPhone と Android の�
 - 端末の公式仕様の最新(iPhone 17 以降、Pixel 10 など)と、日本での機種別シェア(#58)。
 - 各アプリのフィード表示幅の厳密な値(アプリのバージョンで変わる)。
 - 各プラットフォームの再圧縮の実際の解像度・品質(非公開)。
+
+## よくある失敗と対処
+
+| 失敗 | 原因 | 対処 |
+|---|---|---|
+| パソコンでは読めた文字がスマホで小さい | 作業画面で拡大して見ていた | 書き出し後に**スマホ実機**で確認。本文 44px 以上(§4) |
+| 縦動画の字幕がボタンやキャプションに隠れる | 安全領域を考えていない | 上 約10%・下 約15%・右 約15% を空ける(⚪) |
+| 投稿後に色がくすむ・変わる | P3 や HDR のまま書き出した | sRGB・SDR で書き出す(§5・§6) |
+| プロフィールのグリッドで何の投稿か分からない | 文字を詰め込みすぎた | グリッドでは主題を中央に1つだけ |
+| 画像がぼやける | 小さな画像を拡大して使った、再圧縮が重なった | 幅 1080px 以上で作り、上限ぎりぎりの容量にしない |
+| ダークモードで白背景がまぶしい | 真っ白の大面積 | オフホワイトや有彩色の背景にする |
+
+## 関連ページ / 次に読む
+
+- [image-specs-comparison](image-specs-comparison.md) — サービス別の画像仕様
+- [video-specs-comparison](video-specs-comparison.md) — サービス別の動画仕様
+- [export-presets](export-presets.md) — 書き出しの設定値
+- [alt-text](alt-text.md) — 代替テキスト
+- [video-editing-apps](video-editing-apps.md) — 動画編集アプリと書き出し
+
+## 出典
+
+| URL | 確認日 | 備考 |
+|---|---|---|
+| https://support.google.com/youtube/answer/1722171 | 2026-11-03 | YouTube のおすすめのエンコード設定(ビットレート・フレームレート) |
+| https://support.google.com/youtube/answer/72431 | 2026-11-03 | YouTube のカスタムサムネイル(3840×2160 推奨など) |
+| https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media.md | 2026-11-03 | Instagram の画像比率・幅、sRGB への変換 |
+| StatCounter(モバイル OS の日本の割合) | 2026-11-03 | 🟡 検索で得た二次資料 |
+
+## 変更履歴
+
+| 日付 | 内容 |
+|---|---|
+| 2026-11-03 | 初心者向けに加筆(このページで分かること、用語表、よくある失敗、関連ページ、出典・変更履歴を追加。既存の考察と数値は維持) |
