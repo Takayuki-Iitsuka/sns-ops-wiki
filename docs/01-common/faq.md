@@ -28,18 +28,18 @@ A. 形式が違うため、最適化したほうが反応が良くなります(�
 A. サービス・機能ごとに条件が異なり、変更もあります。未確認の項目は [verification-queue](../00-meta/verification-queue.md)。
 
 **Q. 収益化の前に何をすべきですか?**
-A. 資産(記事・書籍)を積み、導線を整え、広告表記と税務の基礎を知ることです([monetization-roadmap](../06-strategy/03-monetization-roadmap.md))。
+A. 資産(記事・書籍)を積み、導線を整え、広告表記と税務の基礎を知ることです([monetization-roadmap](../30-strategy/03-monetization-roadmap.md))。
 
 **Q. 書籍の紹介リンクで報酬を得る場合は?**
 A. 広告であることを一目で分かる形で表記します([legal-compliance](legal-compliance.md))。
 
 ## 画像・権利
 
-**Q. ネットで見つけた神様の絵を使ってよいですか?**
+**Q. ネットで見つけたイラストや写真を使ってよいですか?**
 A. 無断使用は避けてください。権利と条件を確認します([image-sources-and-copyright](image-sources-and-copyright.md))。
 
-**Q. 古事記の現代語訳を引用してよいですか?**
-A. 訳は訳者の著作物です。必要最小限の引用に留めるか、自分で訳します([01-source-texts](../05-theme-kojiki/01-source-texts.md))。
+**Q. 他人の翻訳や文章を引用してよいですか?**
+A. 翻訳・文章は著作物です。必要最小限の引用に留め、出典を明示します([legal-compliance](legal-compliance.md))。
 
 ## このリポジトリ
 

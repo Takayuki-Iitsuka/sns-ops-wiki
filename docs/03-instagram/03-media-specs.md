@@ -42,3 +42,22 @@ sources:
 ## 関連
 
 [共通の画像比較](../01-common/image-specs-comparison.md)
+
+## リール・ストーリーズ・動画(🟡 二次資料。#18)
+
+| 項目 | 値 | 確度 |
+|---|---|---|
+| リールの比率・解像度 | 9:16、1080×1920 | 🟡 |
+| リールの長さ | 90秒・3分・15分・20分と資料により不一致(**アプリ内で確認**) | 🟡 |
+| リールの容量 | 約4GB まで(アプリ)。API 公開は 100MB/300MB と不一致 | 🟡 |
+| ストーリーズ | 9:16、1080×1920。上下の安全領域を空ける | ⚪ |
+| カバー | JPEG(API は 8MB 以下)。プロフィールのグリッド表示の切り抜きに注意 | 🟡 |
+
+## API 経由の公開
+
+**画像は JPEG のみ・8MB**、公開上限 50件/24時間(カルーセルは1件)、素材は公開 URL に置く。詳細は [20-api/03-instagram-graph-api](../20-api/03-instagram-graph-api.md)。
+
+## 書き出し
+
+[export-presets](../01-common/export-presets.md)、比較は [image](../01-common/image-specs-comparison.md) / [video](../01-common/video-specs-comparison.md)。
+

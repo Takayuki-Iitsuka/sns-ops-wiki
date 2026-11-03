@@ -18,13 +18,13 @@ confidence: ⚪
 
 ## 投稿前
 
-- [ ] 典拠(巻・段)を確認した([source-texts](../05-theme-kojiki/01-source-texts.md))
-- [ ] 神名・年の表記が統一([terminology](../05-theme-kojiki/02-terminology.md)、[chronology](../05-theme-kojiki/03-chronology.md))
+- [ ] 出典(一次資料)を確認した
+- [ ] 固有名詞・年の表記が統一(年は「西暦(皇紀・和暦)」)
 - [ ] 画像の比率・容量([03-media-specs](03-media-specs.md))
 - [ ] ALT を設定([05-alt-text](05-alt-text.md))
 - [ ] ハッシュタグは1〜2個程度([04-text-hashtags](04-text-hashtags.md))
 - [ ] 広告・PR 表記の要否
-- [ ] 断定表現を避けた([09-sensitivity](../05-theme-kojiki/09-sensitivity.md))
+- [ ] 断定表現を避けた([sensitive-topics](../01-common/sensitive-topics-and-accuracy.md))
 
 ## 投稿後
 

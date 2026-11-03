@@ -18,10 +18,10 @@ confidence: ⚪
 
 ## 記事の公開前
 
-- [ ] 典拠(巻・段)と底本を明記([source-texts](../05-theme-kojiki/01-source-texts.md))
+- [ ] 出典・参考文献を明記
 - [ ] 見出し画像(1280×670)と本文中の画像の権利([image-sources](../01-common/image-sources-and-copyright.md))
-- [ ] 神名・年の表記が統一
-- [ ] 事実・解釈・信仰の区別([sensitivity](../05-theme-kojiki/09-sensitivity.md))
+- [ ] 固有名詞・年の表記が統一
+- [ ] 事実・解釈・意見の区別([sensitive-topics](../01-common/sensitive-topics-and-accuracy.md))
 - [ ] 参考文献(書名・編者・出版社・刊行年)
 - [ ] 広告・PR(書籍紹介など)の表記
 - [ ] 有料記事: 無料部分で価値を示し、有料ラインの位置を確認
@@ -37,4 +37,4 @@ confidence: ⚪
 
 - [ ] 記事の更新(誤り・リンク切れ)
 - [ ] 目次記事の更新
-- [ ] 収益・経費の記録([tax-and-business](../06-strategy/04-tax-and-business.md))
+- [ ] 収益・経費の記録([tax-and-business](../30-strategy/04-tax-and-business.md))

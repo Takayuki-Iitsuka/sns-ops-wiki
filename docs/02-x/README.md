@@ -34,4 +34,3 @@ confidence: ⚪
 
 > 用語: 旧名称の「ツイート」は現在「ポスト」、「リツイート」は「リポスト」。
 11. [11-checklist](11-checklist.md) 運用チェックリスト
-12. [12-theme-application](12-theme-application.md) 古事記・日本書紀テーマへの適用

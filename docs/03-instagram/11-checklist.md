@@ -23,7 +23,7 @@ confidence: ⚪
 - [ ] 1枚目で結論または問い
 - [ ] 重要な文字は安全領域(中央80%)
 - [ ] 代替テキストを各画像に([05-alt-text](05-alt-text.md))
-- [ ] 典拠・神名・年の表記を確認
+- [ ] 事実・固有名詞・日付の表記を確認
 - [ ] ハッシュタグは少数に絞る([04-text-hashtags](04-text-hashtags.md))
 - [ ] AI 生成画像は明記([ai-usage-policy](../01-common/ai-usage-policy.md))
 - [ ] 広告・PR 表記の要否
