@@ -1,2 +1,74 @@
 # sns-ops-wiki
-sns-ops-wiki
+
+SNS の**使い方・設定・投稿ノウハウ・画像と動画の仕様・収益化条件・API 活用**を、Markdown で体系化したナレッジベースです。題材(テーマ)ごとの内容は含まず、**SNS 運用そのもの**に限ります。
+
+- 作成開始: 2026年(皇紀2686年・令和8年)11月3日
+- 言語: 日本語(専門用語は英語＋日本語訳)
+- 公開範囲: **public** — 認証情報・非公開の運用数値・顧客情報は絶対に書かない(→ [CONTRIBUTING.md](CONTRIBUTING.md))
+
+## はじめての人へ
+
+SNS 運用が初めてなら、次の順に読んでください。
+
+1. [はじめての SNS 運用](docs/00-meta/beginners-guide.md) — 全体像と読む順番
+2. [読み方と確度ラベル](docs/00-meta/how-to-read.md) — ✅🟡⚪ の意味
+3. [初心者向け用語解説](docs/01-common/basic-terms-explained.md)
+4. [サービスの選び方](docs/01-common/choosing-platforms.md)
+5. [最初の30日の行動計画](docs/01-common/first-30-days.md)
+
+全ページの一覧と目的別の入口は [docs の索引](docs/README.md) にあります。
+
+## 目次
+
+| 区分 | 場所 | 内容 |
+|---|---|---|
+| メタ情報 | [docs/00-meta/](docs/00-meta/) | **はじめての SNS 運用**、読み方、用語集、出典方針、ページ雛形、**要検証リスト**、ロードマップ、品質レビュー記録 |
+| 共通知識 | [docs/01-common/](docs/01-common/) | **入門(サービスの選び方・最初の30日・用語解説)**、**画像・動画の仕様比較と書き出しプリセット**、制作工程、ハッシュタグ、代替テキスト、コメント運用、文章術、企画、検索、AI 方針、著作権、法令、炎上対応、FAQ、**ライブ配信・ニュースレター・ポッドキャスト・コミュニティ運営・ソーシャルリスニング・多言語・動画編集アプリ** |
+| X | [docs/02-x/](docs/02-x/) | 旧 Twitter。**Subscriptions(月額購読)**、FAQ を含む |
+| Instagram | [docs/03-instagram/](docs/03-instagram/) | フィード・リール・ストーリーズ・ハイライト |
+| note | [docs/04-note/](docs/04-note/) | 記事・マガジン・メンバーシップ |
+| YouTube | [docs/05-youtube/](docs/05-youtube/) | 長尺・Shorts・アップロード手順・ライブ・収益化 |
+| TikTok | [docs/06-tiktok/](docs/06-tiktok/) | 縦型動画の撮影・編集・投稿、Creator Rewards |
+| Threads | [docs/07-threads/](docs/07-threads/) | Meta のテキスト SNS、FAQ |
+| Facebook | [docs/08-facebook/](docs/08-facebook/) | ページ・グループ・リール・動画・ライブ |
+| その他 | [docs/09-other-services/](docs/09-other-services/) | Bluesky、LINE 公式アカウント、Twitch、**Discord** |
+| 収益化サービス | [docs/10-creator-economy/](docs/10-creator-economy/) | FANBOX、Fantia、Patreon、Ko-fi、BOOTH、SUZURI、KDP、アフィリエイト、メンバーシップ設計 |
+| **API** | [docs/20-api/](docs/20-api/) | **API 入門**、認証(OAuth)、秘密情報の管理、エラー対処、Python の最初の一歩、**X API v1.1 → v2 移行**、Instagram/Threads/YouTube/TikTok/LINE/Bluesky、**API のメリット**、**ツール連携**、自動化の方針、パイプライン設計 |
+| **料金プラン** | [docs/40-pricing/](docs/40-pricing/) | **X と Grok の関係・料金、Google(AI・YouTube Premium・Gemini API)、Meta One、note、AI・制作・予約ツール、費用の見積り** |
+| 全体戦略 | [docs/30-strategy/](docs/30-strategy/) | 目標・KPI、導線、収益化計画、税務、**消費税とインボイス**、リスク、調査、案件 |
+| 運用アカウント | [docs/31-accounts/](docs/31-accounts/) | 運用アカウントの台帳(公開情報のみ) |
+| 追加候補 | [docs/99-planned/](docs/99-planned/) | Pinterest ほか(Discord・X Subscriptions は作成済み) |
+| 雛形 | [templates/](templates/) | 投稿計画、投稿カレンダー、週次・月次レビュー、画像チェックリスト、ALT 記録表、メディアキット |
+| 検査 | [scripts/check_wiki.py](scripts/check_wiki.py) | リンク・front matter・年換算・鮮度・秘密情報の検査 |
+
+## 最初に見るページ
+
+- 画像のサイズ・比率: [image-specs-comparison](docs/01-common/image-specs-comparison.md)
+- 動画の長さ・容量・比率: [video-specs-comparison](docs/01-common/video-specs-comparison.md)
+- そのまま使える書き出し値: [export-presets](docs/01-common/export-presets.md)
+- X API の移行: [02-x-api](docs/20-api/02-x-api.md)
+- スマホで見やすい画像・動画サイズの考察: [mobile-viewing-optimization](docs/01-common/mobile-viewing-optimization.md)
+- ALT の詳細: [alt-text](docs/01-common/alt-text.md)
+- ハッシュタグの効率的な使い方: [hashtags](docs/01-common/hashtags.md)
+- AI 利用のルールと設定: [ai-rules-by-platform](docs/01-common/ai-rules-by-platform.md)
+- 料金プラン: [40-pricing](docs/40-pricing/README.md)
+- 未整備事項の考察: [gap-analysis](docs/00-meta/gap-analysis.md)
+- 収益化の比較: [monetization-comparison](docs/01-common/monetization-comparison.md)
+
+## 情報の信頼度表示
+
+各ページ先頭の front matter と本文の数値に、次の確度ラベルを付けています。詳細は [出典方針](docs/00-meta/source-policy.md)。
+
+| ラベル | 意味 |
+|---|---|
+| ✅ | 公式(一次資料)で確認済み |
+| 🟡 | 二次資料(解説記事・検索要約)のみ。公式で要確認 |
+| ⚪ | 一般的な知識・経験則。出典未確認 |
+
+> **重要**: 仕様・収益化条件・API 料金は頻繁に変わります。2026年(皇紀2686年・令和8年)11月3日に、**X(docs.x.com)、Instagram・Threads(developers.facebook.com)、YouTube ヘルプ、LINE 開発者文書、消費者庁の本文を直接取得して ✅ に更新**しました。同日の全ページ加筆では、YouTube ヘルプ、Google・TikTok・LINE の開発者文書、KDP ヘルプ、国税庁タックスアンサー、e-Gov 法令、文化庁なども追加で確認しました。取得できなかったもの(help.x.com、help-note.com、TikTok のヘルプ、創作支援系サービス、W3C など)は 🟡/⚪ のままです。確認状況は [verification-queue.md](docs/00-meta/verification-queue.md) に集約しています。
+
+## 検査の実行
+
+```bash
+python3 -I scripts/check_wiki.py
+```
