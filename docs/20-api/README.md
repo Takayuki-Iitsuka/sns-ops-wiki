@@ -25,6 +25,8 @@ SNS の **API(Application Programming Interface、プログラムから操作す
 | [07-other-apis](07-other-apis.md) | Facebook、LINE、Bluesky、Twitch、note |
 | [08-automation-and-tools](08-automation-and-tools.md) | 自動化の方針・ツール・規約 |
 | [09-architecture-patterns](09-architecture-patterns.md) | 投稿パイプラインの設計 |
+| [10-benefits-of-api](10-benefits-of-api.md) | **API のメリット・デメリット・判断基準・ユースケース** |
+| [11-tool-integrations](11-tool-integrations.md) | **他のツールとの連携** |
 
 ## 横断比較(🟡)
 

@@ -28,3 +28,13 @@ confidence: ⚪
 ## 例
 
 > スクリーンショット。SNS運用の週次カレンダーで、月曜は「X: 告知」、水曜は「note: 記事公開」、金曜は「Instagram: 画像3枚」と入力されている。
+
+## API で付ける場合(✅ docs.x.com)
+
+- **Create Media Metadata** で `alt_text`(**最大1,000字**)を設定。**$0.005/回**。
+- 手順: メディアをアップロードして `media_id` を得る → メタデータで alt を付与 → `POST /2/tweets` に `media_ids` を渡す。
+- 画像4枚なら 4 回(= $0.02)。月30枚で $0.15([06-cost-planning](../40-pricing/06-cost-planning.md))。
+
+## 詳細ガイド
+
+種類別の書き方、日本語の注意、読み上げテスト、AI での作成は [alt-text 詳細ガイド](../01-common/alt-text.md) と [alt-text-log](../../templates/alt-text-log.md)。

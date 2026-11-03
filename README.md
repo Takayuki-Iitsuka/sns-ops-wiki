@@ -21,7 +21,8 @@ SNS の**使い方・設定・投稿ノウハウ・画像と動画の仕様・�
 | Facebook | [docs/08-facebook/](docs/08-facebook/) | ページ・グループ・リール |
 | その他 | [docs/09-other-services/](docs/09-other-services/) | Bluesky、LINE 公式アカウント、Twitch |
 | 収益化サービス | [docs/10-creator-economy/](docs/10-creator-economy/) | FANBOX、Fantia、Patreon、Ko-fi、BOOTH、SUZURI、KDP、アフィリエイト、メンバーシップ設計 |
-| **API** | [docs/20-api/](docs/20-api/) | **X API v1.1 → v2 移行**、Instagram/Threads/YouTube/TikTok/LINE/Bluesky、自動化の方針、パイプライン設計 |
+| **API** | [docs/20-api/](docs/20-api/) | **X API v1.1 → v2 移行**、Instagram/Threads/YouTube/TikTok/LINE/Bluesky、**API のメリット**、**ツール連携**、自動化の方針、パイプライン設計 |
+| **料金プラン** | [docs/40-pricing/](docs/40-pricing/) | **X と Grok の関係・料金、Google(AI・YouTube Premium・Gemini API)、Meta One、note、AI・制作・予約ツール、費用の見積り** |
 | 全体戦略 | [docs/30-strategy/](docs/30-strategy/) | 目標・KPI、導線、収益化計画、税務、リスク、調査 |
 | 運用アカウント | [docs/31-accounts/](docs/31-accounts/) | 運用アカウントの台帳(公開情報のみ) |
 | 追加候補 | [docs/99-planned/](docs/99-planned/) | Pinterest、Discord ほか |
@@ -34,6 +35,12 @@ SNS の**使い方・設定・投稿ノウハウ・画像と動画の仕様・�
 - 動画の長さ・容量・比率: [video-specs-comparison](docs/01-common/video-specs-comparison.md)
 - そのまま使える書き出し値: [export-presets](docs/01-common/export-presets.md)
 - X API の移行: [02-x-api](docs/20-api/02-x-api.md)
+- スマホで見やすい画像・動画サイズの考察: [mobile-viewing-optimization](docs/01-common/mobile-viewing-optimization.md)
+- ALT の詳細: [alt-text](docs/01-common/alt-text.md)
+- ハッシュタグの効率的な使い方: [hashtags](docs/01-common/hashtags.md)
+- AI 利用のルールと設定: [ai-rules-by-platform](docs/01-common/ai-rules-by-platform.md)
+- 料金プラン: [40-pricing](docs/40-pricing/README.md)
+- 未整備事項の考察: [gap-analysis](docs/00-meta/gap-analysis.md)
 - 収益化の比較: [monetization-comparison](docs/01-common/monetization-comparison.md)
 
 ## 情報の信頼度表示

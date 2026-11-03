@@ -10,3 +10,12 @@
 - [ ] 代替テキスト(alt text)を用意した
 - [ ] 広告・PR 表記が必要か確認した
 - [ ] ファイル名規則に従った(`YYYYMMDD_媒体_用途_連番`)
+
+## スマートフォンでの見え方・ALT(追加)
+
+- [ ] 本文の文字は 1080px 幅で **44px 以上**(補足 36px 以上)([mobile-viewing-optimization](../docs/01-common/mobile-viewing-optimization.md))
+- [ ] 1行 18〜20字以内、コントラスト 4.5:1 以上
+- [ ] 一覧・グリッドのサムネイルで主題が分かる(YouTube サムネイルの文字は 100px 以上)
+- [ ] ライト/ダークモード、屋外の明るさで確認
+- [ ] ALT を書いた([alt-text 詳細ガイド](../docs/01-common/alt-text.md)、[alt-text-log](alt-text-log.md))
+- [ ] 実機(iPhone/Android)で確認、VoiceOver/TalkBack で読み上げ

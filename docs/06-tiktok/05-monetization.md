@@ -33,3 +33,8 @@ confidence: 🟡
 ## 税務・広告表記
 
 [tax-and-business](../30-strategy/04-tax-and-business.md)、[legal-compliance](../01-common/legal-compliance.md)。
+
+## TikTok Shop(日本。🟡 報道)
+
+- 日本の TikTok Shop では、**GMV(流通総額)の約6割がライブ経由**と報じられている。
+- 参加条件・手数料は公式で確認(#33)。

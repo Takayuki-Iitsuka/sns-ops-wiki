@@ -58,3 +58,7 @@ PR・広告がある場合はここに明記 → legal-compliance
 
 - 無関係な人気タグの詰め込み。
 - 他人のチャンネル名の無断利用。
+
+## AI の使用の開示(✅)
+
+本物のように見える AI 生成・大幅改変のコンテンツは、アップロード時に YouTube Studio の「AI の使用」で開示する。詳細: [ai-rules-by-platform](../01-common/ai-rules-by-platform.md)。字幕・アクセシビリティは [alt-text 詳細ガイド](../01-common/alt-text.md)。

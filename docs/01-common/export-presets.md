@@ -73,3 +73,7 @@ confidence: ⚪
 ## 自動化(任意)
 
 Python(Pillow)や ffmpeg でプリセットを一括書き出しできます。大量処理の前に1枚で試し、画像の実ファイルはリポジトリに入れず(ソースのみ)管理します。
+
+## 文字サイズ・スマートフォンでの見え方
+
+1080px 幅の画像では **本文 44px 以上**、1280px 幅(note)では約 50px 以上、YouTube サムネイル(1280×720)では **100px 以上**が目安。根拠と計算は [mobile-viewing-optimization](mobile-viewing-optimization.md)。

@@ -41,3 +41,7 @@ confidence: ⚪
 - 他人の作風をそのまま真似る指示
 - 実在の人物の写真風画像
 - 出典のない「AI が教えてくれた」知識の掲載
+
+## サービス別のルール・設定
+
+開示の要否と設定の場所は [ai-rules-by-platform](ai-rules-by-platform.md)(YouTube ✅、Instagram API ✅)。

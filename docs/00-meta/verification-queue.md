@@ -59,6 +59,31 @@ confidence: ⚪
 | 42 | Twitch | Affiliate/Partner の現行条件 | 資料により不一致 | 🟡 |
 | 43 | note | 公式の公開 API の有無 | 未確認 | ⚪ |
 
+## 料金・新動向・運用(2026年11月3日に追加)
+
+| # | 確認事項 | 現在の記載 | 確度 |
+|---|---|---|---|
+| 44 | X Premium(Basic / Premium / Premium+)の日本円の現行価格(`help.x.com` は取得不可) | Premium+ は Web 1か月 6,080円(2025年2月改定)。他は不明/不一致 | 🟡 |
+| 45 | Grok / SuperGrok の価格、X Premium との関係、xAI API(`docs.x.ai` 未取得)の公式単価 | 比較サイトのみ(SuperGrok 約 $30 など)。不一致 | 🟡 |
+| 46 | Google AI Plus / Pro / Ultra の日本価格と特典(`one.google.com` 未取得)、Gemini Developer API(`ai.google.dev` 未取得) | 報道(Plus 1,200円、Pro 2,900円、Ultra 5x 14,500円、20x 32,000円)。Google Cloud の料金は ✅ | 🟡/✅ |
+| 47 | YouTube Premium の日本の現行価格(iPhone は割高) | Gizmodo/Selectra(2026年4月ごろ) | 🟡 |
+| 48 | Meta One・Meta Verified の日本価格 | 報道(Instagram Plus 319円、Core 949円、Premium 2,900円) | 🟡 |
+| 49 | note プレミアム(500円)・note pro(80,000円/月)の公式価格、販売手数料 | help-note 記事の検索要約 | 🟡 |
+| 50 | ChatGPT・Claude の日本円価格 | ドル建て(Plus/Pro $20、$100、$200 など) | 🟡 |
+| 51 | Canva Pro・Adobe Express・CapCut Pro の価格 | Canva は不一致、他は未確認 | 🟡 |
+| 52 | Buffer・Later・Hootsuite・Zapier・Make・IFTTT の現行価格 | 比較記事 | 🟡 |
+| 53 | Instagram のアフィリエイトの日本での参加条件 | 報道のみ | 🟡 |
+| 54 | X Money の日本提供(現状は米国のみ) | 商標出願の報道のみ | 🟡 |
+| 55 | YouTube ショッピング アフィリエイト(日本、楽天市場がパートナー)の参加条件 | 報道のみ | 🟡 |
+| 56 | Instagram のハッシュタグ上限 5 個(日本・API への適用)、公式 API 文書の「30個」との差 | 報道 vs 公式 API 文書 | 🟡/✅ |
+| 57 | AI 開示の設定: Meta・TikTok・X の公式ルール、学習への利用のオプトアウト手順 | 報道・解説記事 | 🟡 |
+| 58 | 端末の公式仕様(iPhone 17 以降、Pixel 10 など)、日本の機種別シェア、各アプリのフィード表示幅 | 一般知識 | ⚪ |
+| 59 | Google Cloud の Veo 料金「1 count」の単位(秒か本か) | 公式ページに単位の説明なし | ✅数値/単位不明 |
+| 60 | 各サービスのデータ書き出し機能の名称・手順(X、Instagram、TikTok、note、Bluesky、LINE) | 一般知識 | ⚪ |
+| 61 | 個人情報保護法・外部送信規律の具体的な要件 | 一般知識 | ⚪ |
+| 62 | 音楽の権利: JASRAC などとプラットフォームの包括契約の範囲 | 一般知識 | ⚪ |
+| 63 | 案件の契約・報酬の相場・源泉徴収の扱い | 一般知識 | ⚪ |
+
 ## 法務・税務・規約(専門資料での確認)
 
 | # | 確認事項 | 確認先 |

@@ -39,6 +39,12 @@ confidence: ⚪
 - **新事実**: X は 2026年に Following・Likes・Quote の API を self-serve から削除、自動リプライは「呼び出された場合」のみ、URL 付き投稿は $0.20、`paid_partnership` フィールド追加。Instagram API は `alt_text`・`is_ai_generated`・パートナーシップ表示に対応。公開上限は公式ページ内で 100 と 50 が併記。
 - 取得できなかった: `help.x.com`・`www.help-note.com`(Cloudflare の bot 確認)、`help.instagram.com`(JS 描画)。回避は行っていない。
 
+### パス8: 料金・モバイル・ALT・AI・API 活用の拡充
+- 追加: `40-pricing`(7)、`mobile-viewing-optimization`、`alt-text`(全面改訂)、`hashtags`(全面改訂)、`ai-rules-by-platform`、`20-api/10`・`11`、`link-in-bio-and-utm`、`data-backup`、`privacy`、`music`、`07-sponsorship`、`gap-analysis`、`templates/alt-text-log`。
+- 調査: 料金(X Premium・Grok・Google AI・YouTube Premium・Meta One・note・ツール)、StatCounter、AI ラベル、ハッシュタグ、最近の動向を検索。**公式で直接確認**: X(xAI クレジット還元、MCP、Grok を使うモデレーション)、Google Cloud(Gemini・Imagen・Veo の料金)、YouTube の AI 開示、Instagram の `alt_text` 1,000字。
+- 重要な発見: Instagram のハッシュタグ上限 5 個(報道)と公式 API 文書の 30 個が食い違う。X の Premium の円価格は 2026年の公式値を確認できない。Veo の料金単位が不明。
+- 要検証リストを #63 まで拡張。
+
 ### 要件の突合せ
 
 | 要件 | 状況 |
@@ -50,7 +56,13 @@ confidence: ⚪
 | ハッシュタグ | 各 text、共通 hashtags ✓ |
 | 画像の説明文 | 各 alt、共通 alt-text ✓(note は機能未確認 #16) |
 | 画像・動画の形式・サイズ・比率 | 比較表2本、書き出しプリセット、各 media-specs ✓(公式未確認が残る) |
-| API(X の v1.1→v2 を含む) | 20-api ✓(価格・期日・エンドポイントは未確認 #36〜#38) |
+| API(X の v1.1→v2 を含む) | 20-api ✓(X・Instagram・Threads は ✅。期日の一部は #36) |
+| 料金プラン(Grok・Google を含む) | 40-pricing ✓(X API・Google Cloud は ✅、他は 🟡) |
+| スマホ(iPhone・Android)での見やすさ | mobile-viewing-optimization ✓(計算に基づく考察) |
+| ALT の詳細 | alt-text ✓、サービス別、API、記録表 |
+| AI 利用のルール・設定 | ai-rules-by-platform ✓ |
+| ハッシュタグの効率的な使い方 | hashtags ✓ |
+| API のメリット・ツール連携 | 20-api/10・11 ✓ |
 | 収益化できる追加サービス | YouTube、TikTok、Facebook、Twitch、創作支援系 ✓ |
 
 ### 残課題(次パスへ)

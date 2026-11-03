@@ -19,7 +19,13 @@
 | 文章を書く | [writing-guide](01-common/writing-guide.md)、[search-optimization](01-common/search-optimization.md) |
 | 収益化を考える | [monetization-comparison](01-common/monetization-comparison.md)、[monetization-roadmap](30-strategy/03-monetization-roadmap.md)、[creator-economy](10-creator-economy/README.md) |
 | 税務・法令 | [tax-and-business](30-strategy/04-tax-and-business.md)、[legal-compliance](01-common/legal-compliance.md) |
-| 自動化・API | [20-api](20-api/README.md)、[X API 移行](20-api/02-x-api.md) |
+| 自動化・API | [20-api](20-api/README.md)、[X API 移行](20-api/02-x-api.md)、[API のメリット](20-api/10-benefits-of-api.md)、[ツール連携](20-api/11-tool-integrations.md) |
+| 料金を知る・見積る | [40-pricing](40-pricing/README.md)、[X と Grok](40-pricing/01-x-and-grok.md)、[Google](40-pricing/02-google.md)、[費用の見積り](40-pricing/06-cost-planning.md) |
+| スマホで見やすい画像・動画 | [mobile-viewing-optimization](01-common/mobile-viewing-optimization.md) |
+| ALT・アクセシビリティ | [alt-text](01-common/alt-text.md)、[alt-text-log](../templates/alt-text-log.md) |
+| AI を使うときのルール | [ai-rules-by-platform](01-common/ai-rules-by-platform.md)、[ai-usage-policy](01-common/ai-usage-policy.md) |
+| 案件・メディアキット | [sponsorship-and-media-kit](30-strategy/07-sponsorship-and-media-kit.md) |
+| 未整備事項 | [gap-analysis](00-meta/gap-analysis.md) |
 | 権利・AI | [image-sources-and-copyright](01-common/image-sources-and-copyright.md)、[ai-usage-policy](01-common/ai-usage-policy.md) |
 | 炎上・トラブル | [crisis-response](01-common/crisis-response.md)、[risk-register](30-strategy/05-risk-register.md) |
 | 初心者の疑問 | [faq](01-common/faq.md) |
@@ -51,3 +57,9 @@
 | [crisis-response](01-common/crisis-response.md) | 炎上・トラブル対応 |
 | [tools](01-common/tools.md) | ツールの選び方 |
 | [faq](01-common/faq.md) | よくある質問 |
+| [mobile-viewing-optimization](01-common/mobile-viewing-optimization.md) | スマホで見やすい画像・動画サイズの考察 |
+| [ai-rules-by-platform](01-common/ai-rules-by-platform.md) | AI 利用のルールと設定(サービス別) |
+| [link-in-bio-and-utm](01-common/link-in-bio-and-utm.md) | プロフィールのリンクと UTM |
+| [data-backup-and-portability](01-common/data-backup-and-portability.md) | バックアップと持ち出し |
+| [privacy-and-personal-info](01-common/privacy-and-personal-info.md) | 個人情報の扱い |
+| [music-and-licensing](01-common/music-and-licensing.md) | 音楽・音源の権利 |
