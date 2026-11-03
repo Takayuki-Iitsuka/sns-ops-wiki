@@ -4,13 +4,38 @@ platform: common
 topic: api
 last_verified: 2026-11-03
 confidence: 🟡
+sources:
+  - https://docs.x.com/x-api/getting-started/pricing.md
+  - https://docs.x.com/fundamentals/authentication/oauth-2-0/authorization-code.md
+  - https://docs.x.com/tools/mcp
 ---
 
 # 他のツールとの連携
 
+> **このページで分かること**: SNS と他のツール(予約ツール・ノーコード・表計算・チャット・AI)をつなぐ方法、費用の見方、安全な連携の原則、選び方。
+>
+> **対象**: 初心者〜中級者  **先に読むページ**: [10-benefits-of-api](10-benefits-of-api.md)
+
+## 概要
+
 SNS 運用は、**複数のツールを「つなぐ」**ほど効率が上がります。ただし連携は**費用の二重化・規約・セキュリティ**を伴います。
 
 > X 側の費用・制約は ✅(docs.x.com)。ノーコードツールの料金は 🟡([05-ai-and-creative-tools](../40-pricing/05-ai-and-creative-tools.md))。
+
+初心者は、**プログラムを書かない連携**(サービス内蔵の連携、予約ツール、ノーコード)から始めるのが安全です。どの方法でも、裏側では各サービスの API と OAuth(パスワードを渡さない許可の仕組み)が使われています。
+
+## 用語
+
+| 用語 | 意味 |
+|---|---|
+| integration(連携) | 2つ以上のツールをつないでデータや操作を受け渡すこと |
+| trigger / action(トリガー / アクション) | 「〜が起きたら」/「〜をする」。ノーコードの基本の組み立て |
+| RSS(アールエスエス) | サイトの新着情報を機械が読める形で配る仕組み |
+| webhook(ウェブフック) | 出来事をすぐに相手の URL へ知らせる仕組み |
+| polling(ポーリング) | 一定間隔で「新着はある?」と確認しに行く方式 |
+| MCP(Model Context Protocol) | AI アシスタントが外部ツールを呼び出すための共通の仕組み |
+| OAuth 連携 | パスワードを渡さず、権限(スコープ)を絞って許可する連携 |
+| revoke(連携の解除) | 許可した連携を取り消すこと |
 
 ## 1. 連携の種類
 
@@ -105,3 +130,43 @@ SNS 運用は、**複数のツールを「つなぐ」**ほど効率が上がり
 5. クロス投稿・AI 下書き。
 
 構成の設計は [09-architecture-patterns](09-architecture-patterns.md)。
+
+## 9. 手順: 連携を安全に始める(⚪ 一般的な手順。画面名はサービスごとに異なる)
+
+1. **目的を1つに決める**(例: 「note の新着記事を X で告知」)。
+2. ツールの説明で、**公式の OAuth 連携**か(SNS のパスワードを入力させないか)を確認する。
+3. 許可画面で**求められる権限(スコープ)**を読む。X なら `tweet.write` は投稿、`dm.read` は DM の読み取り(✅ [12-auth-oauth-and-tokens](12-auth-oauth-and-tokens.md))。目的に対して多すぎるなら使わない。
+4. **費用**を計算する: ツール料金+ API 費用(X の URL 付き投稿は1回 $0.200 ✅)。
+5. まず**自分だけに見える形**(下書き・通知)で試す。
+6. 本番にしたら、**失敗通知**と**停止方法**を確認する。
+7. 使わなくなったら、SNS 側の設定画面(「連携しているアプリ」など ⚪)から**連携を解除**する。
+
+## よくある失敗と対処
+
+| 失敗 | 対処 |
+|---|---|
+| 無料プランの回数を超えて連携が止まった | 回数・ステップの上限を確認し、頻度を下げる |
+| RSS → X の自動告知で URL 付き投稿の費用がかさんだ | 本文に URL を入れない設計、または手動で告知 |
+| 退職・担当交代後も、前任者の連携が残っていた | 定期的に連携アプリの一覧を棚卸しし、不要なものを解除 |
+| AI にトークンを渡したら、意図しない操作をした | 読み取り専用のトークンから試し、書き込みは承認付きに |
+
+## 関連ページ / 次に読む
+
+- [09-architecture-patterns](09-architecture-patterns.md) — 構成の設計
+- [08-automation-and-tools](08-automation-and-tools.md) — 規約と自動化の段階
+- [13-secrets-management](13-secrets-management.md) — 鍵を連携先に渡すときの注意
+- [tools](../01-common/tools.md)、[05-ai-and-creative-tools](../40-pricing/05-ai-and-creative-tools.md)
+
+## 出典
+
+| URL | 確認日 | 備考 |
+|---|---|---|
+| https://docs.x.com/x-api/getting-started/pricing.md | 2026-11-03 | X API の単価(URL 付き投稿 $0.200、Owned Reads) |
+| https://docs.x.com/fundamentals/authentication/oauth-2-0/authorization-code.md | 2026-11-03 | X のスコープ一覧 |
+| https://docs.x.com/tools/mcp | 2026-11-03 | X MCP(本文の §6 で既出の出典を明記) |
+
+## 変更履歴
+
+| 日付 | 内容 |
+|---|---|
+| 2026-11-03 | 初心者向けに加筆(このページで分かること・概要・用語・連携を安全に始める手順・よくある失敗・関連ページ・出典を追加。既存の種類・パターン・費用・原則・選定基準・AI 連携は維持) |

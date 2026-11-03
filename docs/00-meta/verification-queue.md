@@ -100,14 +100,14 @@ confidence: ⚪
 
 | # | 確認事項 | 現在の記載 | 確度 |
 |---|---|---|---|
-| 59 | X Subscriptions の資格要件(「500万インプレッション/3か月・ID 確認」か「フォロワー500人・30日」か)、Premium 契約の要否、日本での提供(`help.x.com`・`legal.x.com` は取得不可) | [12-subscriptions](../02-x/12-subscriptions.md) §2 | 🟡 |
-| 60 | X Subscriptions の取り分(5万ドルまで最大97%、以降80%)、アプリ内購入手数料、最低支払額、価格帯 | [12-subscriptions](../02-x/12-subscriptions.md) §3 | 🟡 |
-| 61 | X Subscriptions の機能(購読者限定ポスト・返信・Spaces・DM)、API での取得可否 | [12-subscriptions](../02-x/12-subscriptions.md) §4〜5 | 🟡/⚪ |
-| 62 | Discord Server Subscriptions の条件(メンバー数 500 / 1,000、サーバー作成から30日、コミュニティ有効化、年齢)と**日本での提供**(`discord.com` 系は取得不可) | [04-discord](../09-other-services/04-discord.md) §5 | 🟡 |
-| 63 | Discord の手数料(10%)、ストア手数料、Premium Apps(15% / 30%)、最低払出額($100) | [04-discord](../09-other-services/04-discord.md) §5 | 🟡 |
-| 64 | Discord のアップロード上限、ブーストの段階と必要数、アイコン・バナー・絵文字・ステッカーの寸法 | [04-discord](../09-other-services/04-discord.md) §4 | ⚪ |
-| 65 | Discord API の上限(Webhook の文字数・embed、レート制限)、特権インテントの審査 | [04-discord](../09-other-services/04-discord.md) §8 | ⚪ |
-| 66 | Discord の最小年齢、Server Monetization Policy、Community Guidelines の要点 | [04-discord](../09-other-services/04-discord.md) §6 | ⚪/🟡 |
+| 64 | X Subscriptions の資格要件(「500万インプレッション/3か月・ID 確認」か「フォロワー500人・30日」か)、Premium 契約の要否、日本での提供(`help.x.com`・`legal.x.com` は取得不可) | [12-subscriptions](../02-x/12-subscriptions.md) §2 | 🟡 |
+| 65 | X Subscriptions の取り分(5万ドルまで最大97%、以降80%)、アプリ内購入手数料、最低支払額、価格帯 | [12-subscriptions](../02-x/12-subscriptions.md) §3 | 🟡 |
+| 66 | X Subscriptions の機能(購読者限定ポスト・返信・Spaces・DM)、API での取得可否 | [12-subscriptions](../02-x/12-subscriptions.md) §4〜5 | 🟡/⚪ |
+| 67 | Discord Server Subscriptions の条件(メンバー数 500 / 1,000、サーバー作成から30日、コミュニティ有効化、年齢)と**日本での提供**(`discord.com` 系は取得不可) | [04-discord](../09-other-services/04-discord.md) §5 | 🟡 |
+| 68 | Discord の手数料(10%)、ストア手数料、Premium Apps(15% / 30%)、最低払出額($100) | [04-discord](../09-other-services/04-discord.md) §5 | 🟡 |
+| 69 | Discord のアップロード上限、ブーストの段階と必要数、アイコン・バナー・絵文字・ステッカーの寸法 | [04-discord](../09-other-services/04-discord.md) §4 | ⚪ |
+| 70 | Discord API の上限(Webhook の文字数・embed、レート制限)、特権インテントの審査 | [04-discord](../09-other-services/04-discord.md) §8 | ⚪ |
+| 71 | Discord の最小年齢、Server Monetization Policy、Community Guidelines の要点 | [04-discord](../09-other-services/04-discord.md) §6 | ⚪/🟡 |
 
 ## 優先度 低
 

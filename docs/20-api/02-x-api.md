@@ -17,7 +17,30 @@ sources:
 
 # X API(v1.1 から v2 への移行)
 
+> **このページで分かること**: X API の現状(v2 が主、従量課金)、料金表、2026年(皇紀2686年・令和8年)の主な変更、v1.1 から v2 への置き換え、認証方式。
+>
+> **対象**: 初心者〜中級者  **先に読むページ**: [00-api-for-beginners](00-api-for-beginners.md)。はじめて登録する人は [16-x-api-getting-started](16-x-api-getting-started.md)、画像・動画とレート制限は [17-x-api-media-and-rate-limits](17-x-api-media-and-rate-limits.md)
+
 > 2026年(皇紀2686年・令和8年)11月3日に **docs.x.com の公式 Markdown を直接取得**して確認しました(✅)。ただし価格などは頻繁に変わるため、実運用前に Developer Console(https://console.x.com)で現在値を確認してください。末尾の「公式で確認できなかった点」に注意。
+
+## 概要
+
+X API は、X(旧 Twitter)をプログラムから操作する公式の窓口です。2026年(皇紀2686年・令和8年)の時点で、**v2 が主たる API** で、料金は**使った分だけ払う従量課金**です。古い v1.1 を使っているプログラムは、v2 へ置き換える必要があります。
+
+このページは「X API の全体像と料金・移行」をまとめます。初めて使う人の手順は [16-x-api-getting-started](16-x-api-getting-started.md) にあります。
+
+## 用語
+
+| 用語 | 意味 |
+|---|---|
+| v1.1 / v2 | API のバージョン(世代)。v2 が新しく、主に使うもの |
+| pay-per-usage(従量課金) | 使った回数・件数に応じて払う料金体系 |
+| resource(資源) | 投稿・ユーザーなど、API が返すデータ1件 |
+| Owned Reads(自分のデータの読み取り) | 自分のアカウントのデータを読むときの安い単価 |
+| endpoint map(エンドポイントの対応表) | v1.1 の URL が v2 のどれに当たるかの表 |
+| summoned(呼び出された) | 相手が @メンションや引用であなたを呼んだ状態 |
+| self-serve(自助サービス) | Enterprise 以外の、自分で申し込んで使うプラン |
+| Enterprise(エンタープライズ) | 大口向けの個別契約プラン |
 
 ## 1. 現状(✅)
 
@@ -28,7 +51,7 @@ sources:
 | 料金体系 | **pay-per-usage(従量課金)**。サブスクなし、クレジットを前払い購入し、使った分が引かれる |
 | 管理画面 | Developer Console(https://console.x.com)。2026年(皇紀2686年・令和8年)2月6日に従量課金とともに公開 |
 | SDK | 公式の XDK(Python と TypeScript)、ローカルの Playground、MCP サーバー |
-| 無料クレジット | 初回のカード保存で一度だけ **$20**、初回の自動チャージに対し最大 **$50** のマッチ(合計最大 $70)。付与から3か月で失効 |
+| 無料クレジット | **初めての支払いカードの保存と初回のクレジット購入**で **$20**、初回の自動チャージに対し最大 **$50** のマッチ(合計最大 $70)。付与から3か月で失効 |
 
 ## 2. 料金表(✅ 公式の料金ページ。2026年11月3日取得)
 
@@ -101,61 +124,16 @@ sources:
 | メディア | `POST media/upload`(upload.twitter.com) | **`POST /2/media/upload/...`**(下記 §6) | |
 | alt text | `POST media/metadata/create` | Create Media Metadata(`alt_text` は **最大1,000字** ✅) | $0.005/リクエスト |
 
-## 6. メディアを含む投稿(✅)
+## 6. メディアを含む投稿(✅ 要約。詳細は [17-x-api-media-and-rate-limits](17-x-api-media-and-rate-limits.md))
 
-### フロー
+- 流れ: `POST /2/media/upload/initialize` → `append` → `finalize` →(必要なら状態確認)→ `POST /2/tweets` の `media.media_ids` に ID を渡す。旧方式の `command=INIT/APPEND/FINALIZE` は使わない(9月1日に切替 ✅)。
+- 主な上限: 画像 **5MB**、GIF **15MB**、動画は通常アカウント **20分・8GB**、Premium/認証済み **125分・16GB**。投稿には写真4枚まで、または GIF 1つ、または動画1つ(✅)。
+- 上限は**認証したユーザーのアカウント種別**と `media_category` で決まり、API プランでは決まらない(✅)。
 
-1. `POST /2/media/upload/initialize`(JSON ボディ: `media_type`、`total_bytes`、`media_category`)
-2. `POST /2/media/upload/{id}/append`(チャンクごと)
-3. `POST /2/media/upload/{id}/finalize`
-4. 必要なら `GET /2/media/upload`(`command=STATUS`)で処理待ち
-5. `POST /2/tweets` の `media.media_ids` に ID を渡す
+## 7. レート制限(✅ 要約。詳細は [17-x-api-media-and-rate-limits](17-x-api-media-and-rate-limits.md))
 
-- 以前の **`command=INIT/APPEND/FINALIZE` 方式は旧プロトコル**で使わない(9月1日に切替 ✅)。
-- 単純アップロード `POST /2/media/upload` は**画像と小さなファイルのみ**。動画は必ずチャンク方式。
-- 必要なスコープ: `media.write`、`tweet.write`、`tweet.read`、`users.read`(`offline.access` はリフレッシュ用)。
-
-### 制限(✅)
-
-**制限は「認証したユーザーの X Premium/認証済みか」と `media_category` で決まり、API プランでは決まらない**。アップロードと投稿作成で**別々に**検査される(アップロードが成功しても、投稿で 403 になりうる)。
-
-| 種別 | `media_category` | 上限 |
-|---|---|---|
-| 画像(JPG・PNG・GIF・**WEBP**) | `tweet_image` | **5MB** |
-| アニメーション GIF | `tweet_gif` | **15MB**(解像度 1280×1080 以下、350フレーム以下、総画素 3億以下が成功率の目安) |
-| 動画(Post)・通常アカウント | `tweet_video` / `amplify_video` | **20分、8GB** |
-| 動画(Post)・Premium/認証済み | 同上 | **125分、16GB** |
-| 動画(DM)・通常 | `dm_video` | 140秒、512MB |
-| 動画(DM)・Premium | `dm_video` | 10分、1GB |
-
-- 動画の最短は 0.5 秒。`initialize` の `total_bytes` は 16GB まで。
-- 投稿には**写真4枚まで、または GIF 1つ、または動画 1つ**。
-- 通常アカウントの上限を超える動画を投稿すると **403** `This user is not allowed to post a video longer than N minutes.`。
-
-### 動画の推奨・要件(✅)
-
-| 項目 | 推奨 | 必須条件 |
-|---|---|---|
-| コーデック | H.264 High Profile | — |
-| フレームレート | 30 または 60fps | 60fps 以下 |
-| 解像度 | 1280×720(横)/ 720×1280(縦)/ 720×720(正方形)。Premium は 1080p のアップロード・再生が可 | 32×32 〜 1280×1024 |
-| 比率 | 16:9 または 1:1 | **1:3 〜 3:1**、ピクセル比 1:1 |
-| ビットレート | 映像 最低 5,000kbps(推奨表では 720p で 2,048K)、音声 最低 128kbps | — |
-| 音声 | AAC-LC(HE-AAC 不可)、モノラルまたはステレオ | 5.1以上は不可 |
-| その他 | — | YUV 4:2:0、progressive scan、open GOP 不可 |
-
-## 7. レート制限(✅ 公式)
-
-| エンドポイント | App あたり | User あたり |
-|---|---|---|
-| `POST /2/tweets` | 10,000/24時間 | **100/15分** |
-| `DELETE /2/tweets/:id` | — | 50/15分 |
-| `GET /2/tweets/search/recent` | 450/15分 | 300/15分(最大100件/回) |
-| `POST /2/media/upload`(単純) | 50,000/24時間 | 500/15分 |
-| `POST /2/media/upload/initialize`・`append`・`finalize` | 各 180,000/24時間 | 各 1,875/15分 |
-
-- 応答ヘッダー `x-rate-limit-limit` / `remaining` / `reset` を見る。429 は待機して再試行([01-concepts-and-security](01-concepts-and-security.md))。
-- ベアラートークン(アプリ専用)は App あたり、ユーザー認証は User あたりの制限が適用される。
+- `POST /2/tweets` は App あたり 10,000/24時間、**User あたり 100/15分**。`GET /2/tweets/search/recent` は App 450/15分・User 300/15分(✅)。
+- 応答ヘッダー `x-rate-limit-limit` / `remaining` / `reset` を見る。429 は待機して再試行([14-errors-and-troubleshooting](14-errors-and-troubleshooting.md))。
 
 ## 8. 認証(✅)
 
@@ -202,5 +180,33 @@ print(r.json())
 
 - 旧 Basic/Pro の**自動移行日**(§4)。
 - v1.1 の**廃止日**(公式文書にはない)。
-- OAuth 2.0 の個別スコープの完全な一覧(`media.write`・`tweet.write` は確認済み)。
+- ~~OAuth 2.0 の個別スコープの完全な一覧~~ → 2026-11-03 に公式の認可コードのページで一覧を確認(✅ [12-auth-oauth-and-tokens](12-auth-oauth-and-tokens.md))。
 - 日本の税務・請求書の扱い(Developer Console の請求画面で確認)。
+
+## 12. 関連ページ / 次に読む
+
+- [16-x-api-getting-started](16-x-api-getting-started.md) — 登録から最初の投稿まで(初心者向け)
+- [17-x-api-media-and-rate-limits](17-x-api-media-and-rate-limits.md) — メディア投稿とレート制限の詳細
+- [12-auth-oauth-and-tokens](12-auth-oauth-and-tokens.md)、[14-errors-and-troubleshooting](14-errors-and-troubleshooting.md)
+- [01-x-and-grok](../40-pricing/01-x-and-grok.md)、[06-cost-planning](../40-pricing/06-cost-planning.md) — 料金・見積もり
+
+## 出典
+
+| URL | 確認日 | 備考 |
+|---|---|---|
+| https://docs.x.com/x-api/migrate/overview.md | 2026-11-03 | v2 が primary、v1.1 の扱い |
+| https://docs.x.com/x-api/migrate/x-api-endpoint-map.md | 2026-11-03 | v1.1 → v2 の対応表 |
+| https://docs.x.com/x-api/getting-started/pricing.md | 2026-11-03 | 料金表、無料クレジット(2026-11-03 に再取得) |
+| https://docs.x.com/x-api/fundamentals/rate-limits.md | 2026-11-03 | レート制限 |
+| https://docs.x.com/x-api/media/introduction.md | 2026-11-03 | メディアの上限 |
+| https://docs.x.com/x-api/media/quickstart/best-practices.md | 2026-11-03 | 動画の推奨 |
+| https://docs.x.com/x-api/media/quickstart/media-upload-chunked.md | 2026-11-03 | 分割アップロード |
+| https://docs.x.com/changelog.md | 2026-11-03 | 2026年の変更 |
+| https://docs.x.com/fundamentals/authentication/oauth-2-0/authorization-code.md | 2026-11-03 | OAuth 2.0 のスコープ(§11 の一部を解消) |
+
+## 変更履歴
+
+| 日付 | 内容 |
+|---|---|
+| 2026-11-03 | docs.x.com の公式 Markdown を取得して ✅ に更新(既存) |
+| 2026-11-03 | 初心者向けに加筆(このページで分かること・概要・用語・関連ページ・出典を追加)。§6・§7 の詳細を [17-x-api-media-and-rate-limits](17-x-api-media-and-rate-limits.md) へ移設し要約を残した。登録手順は [16-x-api-getting-started](16-x-api-getting-started.md) を新設。無料クレジット $20 の条件を公式の料金ページの現行表記(カード保存**と**初回購入)に修正 |

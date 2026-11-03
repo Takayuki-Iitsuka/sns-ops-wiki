@@ -32,7 +32,7 @@ confidence: ⚪
 | 2 | 運用アカウントの現状記入([31-accounts](../31-accounts/README.md)) | 本人の記入 |
 | 3 | 画像・動画テンプレ(比率別・安全領域つき)の作成 | デザインツールの選定 |
 | 4 | 書き出し用スクリプト(Pillow/ffmpeg)の追加 | export-presets の確定 |
-| 5 | Pinterest の追加。Discord・X Subscriptions は作成済み(公式での裏取り待ち #59〜#66)([99-planned](../99-planned/README.md)) | 優先度の判断 |
+| 5 | Pinterest の追加。Discord・X Subscriptions は作成済み(公式での裏取り待ち #64〜#71)([99-planned](../99-planned/README.md)) | 優先度の判断 |
 | 6 | 投稿データの検証スクリプト(YAML の文字数・画像仕様チェック) | [09-architecture-patterns](../20-api/09-architecture-patterns.md) |
 | 7 | 閲覧サイト化(MkDocs 等) | 公開方針 |
 
