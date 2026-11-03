@@ -1,0 +1,27 @@
+name: wiki-check
+
+on:
+  pull_request:
+    paths:
+      - "**.md"
+      - "scripts/**"
+  push:
+    branches: [main]
+  schedule:
+    # 毎月1日 03:00 JST(前日 18:00 UTC)に鮮度を点検
+    - cron: "0 18 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 整合性検査(エラーで失敗、鮮度の警告は表示のみ)
+        run: python3 -I scripts/check_wiki.py
