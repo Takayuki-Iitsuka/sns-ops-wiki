@@ -6,11 +6,46 @@ last_verified: 2026-11-03
 confidence: 🟡
 sources:
   - ../00-meta/sources.md
+  - https://docs.x.com/x-api/media/introduction.md
+  - https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media.md
+  - https://developers.facebook.com/documentation/threads/overview.md
+  - https://support.google.com/youtube/answer/72431
+  - https://support.google.com/youtube/answer/10456525?hl=ja
+  - https://developers.line.biz/ja/docs/messaging-api/using-rich-menus/
 ---
 
 # 画像仕様の横断比較
 
+> **このページで分かること**: 主要サービスの画像の形式・容量・枚数・比率の上限と、プロフィール・ヘッダー画像のサイズを一覧で比べる。
+>
+> **対象**: 初心者〜中級者  **先に読むページ**: なし。すぐ使える書き出し値だけ知りたい場合は [export-presets](export-presets.md)
+
 > 確度ラベル: ✅ 公式の本文を直接確認 / 🟡 検索要約・二次資料 / ⚪ 一般知識。一致しない資料は両論併記し、[要検証リスト](../00-meta/verification-queue.md) に載せています。動画は [video-specs-comparison](video-specs-comparison.md)、そのまま使える書き出し値は [export-presets](export-presets.md)。
+
+## 概要
+
+同じ画像でも、サービスによって**受け付ける形式・容量・比率**が違います。範囲外の画像は、アップロードできない・自動で切り抜かれる・強く圧縮される、といったことが起きます。
+
+このページは「**上限(どこまで受け付けるか)**」の一覧です。「何 px で作ればよいか」の推奨値は [export-presets](export-presets.md) にまとめています。
+
+### 表の読み方
+
+- **(API)** と書いた行は、開発者向けの公式文書(予約投稿ツールなどが使う仕組み)の値です。✅ が多いのはこのためです。
+- **(アプリ)** の行は、スマホアプリやブラウザから投稿するときの値です。公式ヘルプの本文を取得できないものが多く、🟡 / ⚪ が残っています。
+- アプリと API で値が違うことがあります。迷ったら**両方の範囲に収まる値**で作ると安全です。
+
+## 用語
+
+| 用語 | 意味 |
+|---|---|
+| format(形式) | JPEG・PNG・GIF・WEBP などファイルの種類 |
+| file size(容量) | ファイルの大きさ。MB(メガバイト)・KB(キロバイト) |
+| resolution(解像度) | 横×縦のピクセル数 |
+| aspect ratio(アスペクト比、縦横比) | 横:縦。1.91:1 は横長、4:5 は縦長 |
+| carousel(カルーセル) | 1投稿に複数枚の画像を入れて横にめくる形式 |
+| crop(トリミング、切り抜き) | 画像の一部を切り取ること。範囲外の比率は自動で切られる |
+| sRGB | Web 表示の標準の色空間 |
+| API(エーピーアイ) | アプリ同士がデータをやり取りする仕組み。予約投稿ツールなどが使う |
 
 ## 1. 投稿画像
 
@@ -36,8 +71,8 @@ sources:
 | X | ヘッダー | 1500×500(3:1)。左下にプロフィール画像が重なる | 🟡 |
 | Instagram | プロフィール画像 | 正方形。円形に切り抜かれる | ⚪ |
 | note | クリエイターページ/マガジンヘッダー | 比率 1.91:1(1280×670 を用意) | 🟡 |
-| YouTube | プロフィール | 800×800(円形表示) | 🟡 |
-| YouTube | チャンネルバナー | 2560×1440 で書き出し。中央の安全領域 1546×423。6MB 以下 | 🟡 |
+| YouTube | プロフィール | 800×800(円形表示)🟡。公式: **98×98px で表示**できる画像、JPG・GIF・BMP・PNG(アニメーション GIF 不可)、**15MB 以下** ✅ | 🟡 / ✅ |
+| YouTube | チャンネルバナー | 2560×1440 で書き出し(公式の推奨 ✅)。**最小 2048×1152**、文字・ロゴの**安全領域は中央 1235×338**、**6MB 以下** ✅。旧記載の安全領域 1546×423 は古い資料の値(🟡) | ✅ |
 | Threads / Facebook / TikTok | プロフィール | 正方形。円形切り抜きに備え中央配置 | ⚪ |
 
 ## 3. 比率の早見表
@@ -53,6 +88,8 @@ sources:
 | 3:4 | 1440 | 縦長 | X の縦長上限付近。Instagram は未確認 |
 | 9:16 | 1920 | 縦長 | リール、ショート、ストーリーズ、縦型動画、YouTube ショートのサムネイル |
 
+> 高さの計算: 高さ = 幅 ÷ 横の数 × 縦の数。例: 4:5 で幅 1080 なら 1080 ÷ 4 × 5 = 1350。
+
 ## 4. 共通の実務ルール(⚪ 経験則)
 
 1. **マスターは大きく**: 長辺 2000px 以上で作り、各サービス向けに書き出す。
@@ -64,6 +101,58 @@ sources:
 7. **Exif**: 公開前に位置情報を削除([image-production-workflow](image-production-workflow.md))。
 8. **ファイル名**: `YYYYMMDD_媒体_用途_連番.拡張子`。
 
+## 具体例: 1枚の画像を複数サービスに出す
+
+| やりたいこと | 安全な作り方(⚪) |
+|---|---|
+| X と Instagram に同じ縦長画像 | 1080×1350(4:5)。X の 3:4 の範囲内、Instagram の範囲内 |
+| Instagram の予約投稿ツールでカルーセル | 全枚 JPEG・同じ比率(1枚目の比率に切られるため ✅) |
+| note の見出しと X のリンクカード | 1280×670(約1.91:1)で、文字は中央に |
+
+## よくある失敗と対処
+
+| 失敗 | 起きること | 対処 |
+|---|---|---|
+| カルーセルに縦長と横長を混ぜた | 1枚目の比率に切り抜かれる(Instagram API ✅) | 全枚を同じ比率に |
+| PNG で予約投稿ツールから Instagram へ | 公開できない(API は JPEG のみ ✅) | JPEG で書き出す |
+| 9:16 の画像を Instagram フィードに | 4:5 に切られて上下が欠ける | フィード用は 4:5 で別に作る |
+| YouTube バナーの端に文字 | テレビ・スマホで切れる | 中央 1235×338 に収める(✅) |
+| プロフィール画像の四隅に文字 | 円形で欠ける | 中央の円の中に |
+
+## チェックリスト
+
+- [ ] 投稿先の形式(JPEG/PNG)・容量・比率の範囲内
+- [ ] アプリと API の両方に収まる値にした(予約投稿ツールを使う場合)
+- [ ] カルーセルは全枚同じ比率
+- [ ] プロフィール・バナーの文字は安全領域の中
+- [ ] 画像内の文字を alt text と本文にも書いた
+
 ## 5. 未確認事項
 
 [verification-queue](../00-meta/verification-queue.md) の #4, #7, #9, #12, #17, #31〜#35, #39〜#41 を参照。
+
+## 関連ページ / 次に読む
+
+- [export-presets](export-presets.md)(推奨の書き出し値)
+- [video-specs-comparison](video-specs-comparison.md)(動画)
+- [mobile-viewing-optimization](mobile-viewing-optimization.md)(スマホでの見え方)
+- サービス別: [X](../02-x/03-media-specs.md) / [Instagram](../03-instagram/03-media-specs.md) / [note](../04-note/03-media-specs.md) / [YouTube](../05-youtube/02-media-specs.md)
+
+## 出典
+
+| URL | 確認日 | 備考 |
+|---|---|---|
+| ../00-meta/sources.md | 2026-11-03 | 出典一覧(既存) |
+| https://docs.x.com/x-api/media/introduction.md | 2026-11-03 | X API の画像・GIF の上限 |
+| https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media.md | 2026-11-03 | Instagram API の画像仕様 |
+| https://developers.facebook.com/documentation/threads/overview.md | 2026-11-03 | Threads API の画像仕様 |
+| https://support.google.com/youtube/answer/72431 | 2026-11-03 | YouTube のサムネイル |
+| https://support.google.com/youtube/answer/10456525?hl=ja | 2026-11-03 | YouTube のバナー・プロフィール写真(今回本文を確認) |
+| https://developers.line.biz/ja/docs/messaging-api/using-rich-menus/ | 2026-11-03 | LINE のリッチメニュー |
+
+## 変更履歴
+
+| 日付 | 内容 |
+|---|---|
+| 2026-11-03 | 新規作成 |
+| 2026-11-03 | 初心者向けに加筆(概要、表の読み方、用語、比率の計算、具体例、よくある失敗、チェックリスト、関連ページ、出典)。**YouTube のバナー(最小 2048×1152、安全領域 1235×338、6MB)とプロフィール写真(98×98 表示、15MB)を公式で確認し ✅ を追加**。安全領域の旧値 1546×423(🟡)は古い資料の値として注記 |
