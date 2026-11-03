@@ -33,6 +33,12 @@ confidence: ⚪
 - 追加: 画像・動画の横断比較、書き出しプリセット。
 - 検索で得た二次資料を要検証リスト(#29〜#43)に登録。**公式本文は引き続き未取得**。
 
+### パス7: 公式文書の直接取得(ネットワーク許可後)
+- `docs.x.com`(`.md` 付き URL)、`developers.facebook.com`(`.md`)、`support.google.com`(YouTube)、LINE、消費者庁の本文を取得し、✅ に更新。
+- **訂正**: X の動画上限は「2分20秒・512MB」ではなく、Post は**20分・8GB(Premium 125分・16GB)**。「2分20秒・512MB」は DM 動画。YouTube のサムネイル「2MB 未満」は**モバイルのみ**で、パソコンは 50MB。Instagram リールの API 上限は**15分・300MB**。
+- **新事実**: X は 2026年に Following・Likes・Quote の API を self-serve から削除、自動リプライは「呼び出された場合」のみ、URL 付き投稿は $0.20、`paid_partnership` フィールド追加。Instagram API は `alt_text`・`is_ai_generated`・パートナーシップ表示に対応。公開上限は公式ページ内で 100 と 50 が併記。
+- 取得できなかった: `help.x.com`・`www.help-note.com`(Cloudflare の bot 確認)、`help.instagram.com`(JS 描画)。回避は行っていない。
+
 ### 要件の突合せ
 
 | 要件 | 状況 |
@@ -49,7 +55,7 @@ confidence: ⚪
 
 ### 残課題(次パスへ)
 
-- **公式の裏取りができていない**(最大の弱点)。特に API の価格・期日・上限。
+- 公式の裏取りは進んだが、**X アプリの仕様・収益分配、note、TikTok、Bluesky、Twitch、KDP、国税庁**は未取得。
 - 運用アカウントの現状が未記入。
 - 実運用の検証データ(投稿の反応)が存在しない。
 - TikTok・Facebook の公式仕様がほぼ未調査。

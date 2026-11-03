@@ -46,7 +46,7 @@ SNS の**使い方・設定・投稿ノウハウ・画像と動画の仕様・�
 | 🟡 | 二次資料(解説記事・検索要約)のみ。公式で要確認 |
 | ⚪ | 一般的な知識・経験則。出典未確認 |
 
-> **重要**: 仕様・収益化条件・API 料金は頻繁に変わります。2026年(皇紀2686年・令和8年)11月3日の作成時点では、実行環境の制約により公式ヘルプ・開発者文書の本文を取得できなかったため、**✅ の項目は 0 件で、多くが 🟡/⚪ です**。確認待ちの項目は [verification-queue.md](docs/00-meta/verification-queue.md) に集約しています。
+> **重要**: 仕様・収益化条件・API 料金は頻繁に変わります。2026年(皇紀2686年・令和8年)11月3日に、**X(docs.x.com)、Instagram・Threads(developers.facebook.com)、YouTube ヘルプ、LINE 開発者文書、消費者庁の本文を直接取得して ✅ に更新**しました。取得できなかったもの(help.x.com、help-note.com など)は 🟡/⚪ のままです。確認状況は [verification-queue.md](docs/00-meta/verification-queue.md) に集約しています。
 
 ## 検査の実行
 

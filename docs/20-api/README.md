@@ -10,7 +10,7 @@ confidence: 🟡
 
 SNS の **API(Application Programming Interface、プログラムから操作する公式の窓口)** を使った、投稿の予約・自動化、分析データの取得、複数サービスへの同時配信の設計をまとめます。
 
-> 公式の開発者文書(docs.x.com、developers.facebook.com、developers.google.com、developers.line.biz、atproto.com など)の**本文は取得できていません**。検索要約と二次資料に基づくため、価格・上限・エンドポイントは必ず公式で確認してください(#36〜#40)。
+> 2026年(皇紀2686年・令和8年)11月3日に、**X(docs.x.com)、Instagram・Threads(developers.facebook.com)の公式文書を直接取得して確認**しました(✅)。YouTube Data API、TikTok、LINE の API、Bluesky などは未取得で、🟡/⚪ のままです(#38〜#40)。価格・上限は変わるため、実運用前に公式で再確認してください。
 
 ## ページ一覧
 
@@ -30,9 +30,9 @@ SNS の **API(Application Programming Interface、プログラムから操作す
 
 | サービス | 投稿 API | 認証 | 主な制約 |
 |---|---|---|---|
-| X | あり(v2 `POST /2/tweets`) | OAuth 2.0 PKCE / OAuth 1.0a / Bearer | **従量課金(pay-per-use)**、メディアは別エンドポイント |
-| Instagram | あり(Content Publishing) | Meta アプリ+アクセストークン | **JPEG のみ**、50件/24時間、公開 URL の素材が必要 |
-| Threads | あり | Meta アプリ | 250件/24時間 |
+| X | あり(v2 `POST /2/tweets`) | OAuth 2.0 PKCE / OAuth 1.0a / Bearer | ✅ **従量課金**。URL 付き投稿は $0.20。自動いいね・フォロー・引用は API 不可。返信は呼び出された場合のみ |
+| Instagram | あり(Content Publishing) | Meta アプリ+アクセストークン | ✅ **JPEG のみ**、公開上限 100 または 50件/24時間(公式内で併記)、公開 URL の素材が必要 |
+| Threads | あり | Meta アプリ | ✅ 250件/24時間、テキスト500字 |
 | YouTube | あり(`videos.insert`) | OAuth 2.0 | **未監査プロジェクトは非公開に固定**、クォータ |
 | TikTok | あり(Content Posting API) | OAuth | 監査まで制限あり ⚪ |
 | Facebook ページ | あり(Graph API) | Meta アプリ | 権限審査 |

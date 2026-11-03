@@ -6,7 +6,29 @@ confidence: 🟡
 
 # 出典一覧(2026年(皇紀2686年・令和8年)11月3日 検索で得たもの)
 
-検索結果の要約から得た情報です。**公式ページ本文は直接取得できていません**(bot 確認・JavaScript 描画・ネットワーク制限)。
+## 直接取得して確認したもの(✅)
+
+| URL | 内容 |
+|---|---|
+| https://docs.x.com/x-api/migrate/overview.md | v2 が primary、v1.1 は「いずれ非推奨」 |
+| https://docs.x.com/x-api/migrate/x-api-endpoint-map.md | v1.1 → v2 のエンドポイント対応 |
+| https://docs.x.com/x-api/getting-started/pricing.md | 従量課金の単価 |
+| https://docs.x.com/x-api/fundamentals/rate-limits.md | レート制限 |
+| https://docs.x.com/x-api/media/introduction.md ・ best-practices.md ・ media-upload-chunked.md | メディアの上限・仕様・アップロード手順 |
+| https://docs.x.com/changelog.md | 2026年の変更履歴 |
+| https://developers.facebook.com/documentation/instagram-platform/content-publishing.md | Instagram の公開 API |
+| https://developers.facebook.com/documentation/instagram-platform/instagram-graph-api/reference/ig-user/media.md | 画像・リール・キャプションの仕様 |
+| https://developers.facebook.com/documentation/threads/overview.md | Threads の上限・仕様 |
+| https://support.google.com/youtube/answer/13429240 | 拡充版 YPP |
+| https://support.google.com/youtube/answer/72431 | カスタムサムネイル |
+| https://support.google.com/youtube/answer/1722171 | おすすめのエンコード設定 |
+| https://support.google.com/youtube/answer/10059070 | YouTube ショート(3分) |
+| https://developers.line.biz/ja/docs/messaging-api/using-rich-menus/ | リッチメニューのサイズ |
+| https://www.caa.go.jp/policies/policy/representation/fair_labeling/stealth_marketing/ | ステマ規制 |
+
+## 以下は検索結果の要約から得た情報(🟡)
+
+公式ページ本文を取得できていないもの(bot 確認・JavaScript 描画・ネットワーク制限)。
 
 ## X
 
